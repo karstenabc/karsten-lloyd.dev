@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Barlow-ExtraLight
+font link: https://fonts.google.com/specimen/Barlow
+font author: Jeremy Tribby
+font author site: https://tribby.com/
+Slogan Font: Barlow-ExtraLight
+
+icon designer: m. turan ercan
+icon designer link: /mte
+        
+{"bg":"#50A6D8","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      
