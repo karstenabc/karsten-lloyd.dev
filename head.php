@@ -11,7 +11,7 @@
 <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
 <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold" title="roboto"> -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700">
+<link rel="stylesheet" href="css/roboto.css">
 
 <!-- CSS -->
 <link rel="stylesheet" href="<?php echo $rootPath; ?>css/bootstrap.min.css" />

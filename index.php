@@ -19,7 +19,7 @@
             <h1>Recent Projects</h1>
             <div class="row recent">
                 <?php
-                    $query = "SELECT * FROM projects ORDER BY date_end DESC";
+                    $query = "SELECT * FROM projects ORDER BY date_end = '', date_end DESC LIMIT 3";
                     if ($result = mysqli_query($db, $query)) {
                         while ($row = mysqli_fetch_array($result)) {
                             echo '
