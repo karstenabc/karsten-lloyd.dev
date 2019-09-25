@@ -25,7 +25,9 @@
                             echo '
                             <div class="col-4">
                                 <div class="card">
-                                    <img class="card-img-top" src="'.$row['img'].'" alt="'.$row['title'].'">
+                                    <div class="card-img-container">
+                                        <img src="media/'.$row['img'].'" alt="'.$row['title'].'">
+                                    </div>
                                     <div class="card-body">
                                         <h5 class="card-title">'.$row['title'].'</h5>
                                         <p class="card-text">'.$row['description'].'</p>
@@ -50,11 +52,7 @@
                             </div>';
                         }
                     }
-
                 ?>
-
-
-
 
             </div>
         </div>
