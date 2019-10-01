@@ -43,42 +43,6 @@
                     ?>
                 </div>
                 <br />
-
-
-
-                <div class="row recent">
-                    <?php
-                        // $categories = array();
-                        // $query = "SELECT * FROM knowledge";
-                        // if ($result = mysqli_query($db, $query)) {
-                        //     while ($row = mysqli_fetch_array($result)) {
-                        //         array_push($categories, $row);
-                        //     }
-                        // }
-                        // for ($i=0; $i<sizeof($categories); $i++) {
-                        //     $category = $categories[$i];
-                        //     echo '
-                        //     <div class="col-sm-12 col-md-6 col-lg-4">
-                        //         <div class="card">
-                        //             <div class="card-top-container">
-                        //                 <img src="media/'.$category['category'].'" alt="'.$category['category'].'">
-                        //             </div>
-                        //             ';
-                        //             $query = "SELECT * FROM knowledge_items WHERE categoryID = $category[0] ORDER BY importance";
-                        //             if ($result = mysqli_query($db, $query)) {
-                        //                 echo '<ul class="list-group list-group-flush">';
-                        //                 while ($item = mysqli_fetch_array($result)) {
-                        //                     echo '<li class="list-group-item">'.$item['item'].'</li>';
-                        //                 }
-                        //                 echo '</ul>';
-                        //             }
-                        //             echo '
-                        //         </div>
-                        //     </div>';
-                        // }
-
-                    ?>
-                </div>
             </div>
         </div>
 
@@ -181,7 +145,7 @@
                         $establishment = $establishments[$i];
                         echo '
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
+                            <div class="card" style="border-color:#'.$establishment['colour'].'">
                                 <div class="card-img-container">
                                     <img src="media/'.$establishment['img'].'" alt="'.$establishment['establishment'].'">
                                 </div>
@@ -209,7 +173,7 @@
                                 }
                                 if ($establishment['link'] != '') {
                                     echo '
-                                    <div class="card-footer bg-transparent">
+                                    <div class="card-footer" style="background-color:#'.$establishment['colour'].'">
                                         <a href="'.$establishment['link'].'" class="card-link">Visit Site</a>
                                     </div>';
                                 }
