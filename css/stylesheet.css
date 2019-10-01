@@ -3,16 +3,69 @@
     border: 1px solid blue;
 }
 
+.title {
+    color: #FFF;
+    background-color: #65b1dd;
+    text-align: center;
+    padding: 10px;
+}
+.d {
+    padding-top: 20px;
+    background-color: #f4f9fc;
+    border-top: 1px solid #8fc6e6;
+    border-bottom: 1px solid #8fc6e6;
+}
+h2 {
+    color: #575757;
+    /* text-align: center; */
+    font-size: 2.3em;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.pill {
+    /* border: 1px solid #3b9bd3; */
+    color: #FFF;
+    background-color: #3b9bd3;
+    border-radius: 1px;
+    line-height: 3;
+    padding: 6px 10px;
+    margin: 5px;
+}
+
 .card {
     margin-bottom: 30px;
+    /* border-color: #575757; */
+    border-radius: 0px;
+    border-width: 2px;
 }
-.card-img-container {
+.card-top-container {
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
     padding: 20px;
+}
+.card-img-container {
+    /* color: #FFF; */
+    /* background-color: #3b9bd3; */
+    text-align: center;
+    font-size: 26px;
+    border-color: #3b9bd3 !important;
+    /* border-bottom: 1px solid rgba(0, 0, 0, .125); */
+    padding: 20px;
+    height: 140px;
 }
 .card-img-container img {
     /* width: auto; */
     height: 100px;
     max-width: 100%;
+}
+.card-footer {
+    border-radius: 0px !important;
+}
+.card-link {
+    color: #FFF;
+}
+.card-link:hover {
+    color: #FFF;
+    text-decoration: underline;
 }

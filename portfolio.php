@@ -11,49 +11,78 @@
         ?>
     </head>
     <body>
-        <div class="container">
-            <h1>Portfolio</h1>
-            <h2>Development</h2>
-            <div class="row recent">
-                <?php
-                    $categories = array();
-                    $query = "SELECT * FROM knowledge";
-                    if ($result = mysqli_query($db, $query)) {
-                        while ($row = mysqli_fetch_array($result)) {
-                            array_push($categories, $row);
-                        }
-                    }
-                    for ($i=0; $i<sizeof($categories); $i++) {
-                        $category = $categories[$i];
-                        echo '
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-img-container">
-                                    <img src="media/'.$category['category'].'" alt="'.$category['category'].'">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">'.$category['category'].'</h5>
-                                    <p class="card-text">'.$category['category'].'</p>
-                                </div>';
-                                $query = "SELECT * FROM knowledge_items WHERE categoryID = $category[0] ORDER BY importance";
-                                if ($result = mysqli_query($db, $query)) {
-                                    echo '<ul class="list-group list-group-flush">';
-                                    while ($item = mysqli_fetch_array($result)) {
-                                        echo '<li class="list-group-item">'.$item['item'].'</li>';
-                                    }
-                                    echo '</ul>';
-                                }
-                                echo '
-                            </div>
-                        </div>';
-                    }
-
-                ?>
+        <div class="title">
+            <div class="container">
+                <h1>Portfolio</h1>
             </div>
+        </div>
+        <div class="d">
+            <div class="container">
+                <h2>Development</h2>
+                <div class="row">
+                    <?php
+                        $categories = array();
+                        $query = "SELECT * FROM knowledge";
+                        if ($result = mysqli_query($db, $query)) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                array_push($categories, $row);
+                            }
+                        }
+                        for ($i=0; $i<sizeof($categories); $i++) {
+                            $category = $categories[$i];
+                            echo '<div class="col-12">';
+
+                            $query = "SELECT * FROM knowledge_items WHERE categoryID = $category[0] ORDER BY importance";
+                            if ($result = mysqli_query($db, $query)) {
+                                while ($item = mysqli_fetch_array($result)) {
+                                    echo '<span class="pill">'.$item['item'].'</span>';
+                                }
+                            }
+                            echo '</div>';
+                        }
+                    ?>
+                </div>
+                <br />
 
 
 
+                <div class="row recent">
+                    <?php
+                        // $categories = array();
+                        // $query = "SELECT * FROM knowledge";
+                        // if ($result = mysqli_query($db, $query)) {
+                        //     while ($row = mysqli_fetch_array($result)) {
+                        //         array_push($categories, $row);
+                        //     }
+                        // }
+                        // for ($i=0; $i<sizeof($categories); $i++) {
+                        //     $category = $categories[$i];
+                        //     echo '
+                        //     <div class="col-sm-12 col-md-6 col-lg-4">
+                        //         <div class="card">
+                        //             <div class="card-top-container">
+                        //                 <img src="media/'.$category['category'].'" alt="'.$category['category'].'">
+                        //             </div>
+                        //             ';
+                        //             $query = "SELECT * FROM knowledge_items WHERE categoryID = $category[0] ORDER BY importance";
+                        //             if ($result = mysqli_query($db, $query)) {
+                        //                 echo '<ul class="list-group list-group-flush">';
+                        //                 while ($item = mysqli_fetch_array($result)) {
+                        //                     echo '<li class="list-group-item">'.$item['item'].'</li>';
+                        //                 }
+                        //                 echo '</ul>';
+                        //             }
+                        //             echo '
+                        //         </div>
+                        //     </div>';
+                        // }
 
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
             <h2>Projects</h2>
             <div class="row recent">
                 <?php
@@ -62,11 +91,11 @@
                         while ($row = mysqli_fetch_array($result)) {
                             echo '
                             <div class="col-4">
-                                <div class="card">
+                                <div class="card" style="border-color:#'.$row['border'].'">
                                     <div class="card-img-container">
                                         <img src="media/'.$row['img'].'" alt="'.$row['title'].'">
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" style="background-color:#'.$row['border'].'; color:#FFF;">
                                         <h5 class="card-title">'.$row['title'].'</h5>
                                         <p class="card-text">'.$row['description'].'</p>
                                         <p class="card-text"><small class="text-muted">'.date("F Y", strtotime(date($row['date_start']))).' - ';
@@ -79,11 +108,15 @@
                                         <li class="list-group-item">Backend: '.$row['backend'].'</li>
                                         <li class="list-group-item">Libraries: '.$row['libraries'].'</li>
                                     </ul>';
-                                    if ($row['link'] != '') {
-                                        echo '
-                                        <div class="card-footer bg-transparent">
-                                            <a href="'.$row['link'].'" class="card-link">View Project</a>
-                                        </div>';
+                                    if ($row['link'] != '' || $row['link_client'] != '') {
+                                        echo '<div class="card-footer" style="background-color:#'.$row['border'].'">';
+                                        if ($row['link'] != '') {
+                                            echo '<a href="'.$row['link'].'" class="card-link">View Project</a>';
+                                        }
+                                        if ($row['link_client'] != '') {
+                                            echo '<a href="'.$row['link_client'].'" class="card-link">Visit Client</a>';
+                                        }
+                                        echo '</div>';
                                     }
                                     echo '
                                 </div>
@@ -92,43 +125,48 @@
                     }
                 ?>
             </div>
+        </div>
 
-
-            <h2>Experience</h2>
-            <div class="row recent">
-                <?php
-                    $query = "SELECT * FROM experience ORDER BY date_end = '', date_end DESC";
-                    if ($result = mysqli_query($db, $query)) {
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo '
-                            <div class="col-4">
-                                <div class="card">
-                                    <div class="card-img-container">
-                                        <img src="media/'.$row['img'].'" alt="'.$row['company'].'">
+        <div class="d">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="row recent">
+                    <?php
+                        $query = "SELECT * FROM experience ORDER BY date_end = '', date_end DESC";
+                        if ($result = mysqli_query($db, $query)) {
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo '
+                                <div class="col-4">
+                                    <div class="card">
+                                        <div class="card-img-container">
+                                            <img src="media/'.$row['img'].'" alt="'.$row['company'].'">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">'.$row['job'].'</h5>
+                                            <p class="card-text">'.$row['description'].'</p>
+                                            <p class="card-text">Company: '.$row['company'].'</p>
+                                            <p class="card-text"><small class="text-muted">'.date("F Y", strtotime(date($row['date_start']))).' - ';
+                                            echo ($row['date_end'] == '') ? 'Present' : date("F Y", strtotime(date($row['date_end'])));
+                                echo        '</small></p>
+                                        </div>';
+                                        if ($row['link'] != '') {
+                                            echo '
+                                            <div class="card-footer bg-transparent">
+                                                <a href="'.$row['link'].'" class="card-link">View Site</a>
+                                            </div>';
+                                        }
+                                        echo '
                                     </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">'.$row['job'].'</h5>
-                                        <p class="card-text">'.$row['description'].'</p>
-                                        <p class="card-text">Company: '.$row['company'].'</p>
-                                        <p class="card-text"><small class="text-muted">'.date("F Y", strtotime(date($row['date_start']))).' - ';
-                                        echo ($row['date_end'] == '') ? 'Present' : date("F Y", strtotime(date($row['date_end'])));
-                            echo        '</small></p>
-                                    </div>';
-                                    if ($row['link'] != '') {
-                                        echo '
-                                        <div class="card-footer bg-transparent">
-                                            <a href="'.$row['link'].'" class="card-link">View Site</a>
-                                        </div>';
-                                    }
-                                    echo '
-                                </div>
-                            </div>';
+                                </div>';
+                            }
                         }
-                    }
-                ?>
+                    ?>
+                </div>
             </div>
+        </div>
 
 
+        <div class="container">
             <h2>Education</h2>
             <div class="row recent">
                 <?php
@@ -184,8 +222,7 @@
             </div>
         </div>
 
-
-        <p>test</p>
+        <?php include('footer.php'); ?>
 
     </body>
 </html>
