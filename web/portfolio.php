@@ -98,7 +98,10 @@
                     }
                     echo '</div>';
                     if (sizeof($projects) > 3) {
-                        echo '<div class="show"><button id="show_projects" onclick="showProjects(\'3\',\''.sizeof($projects).'\')" class="btn">Show All ('.sizeof($projects).')</button></div>';
+                        echo '<div class="show">';
+                        echo '<button id="show_projects" onclick="showProjects(\'3\',\''.sizeof($projects).'\')" class="btn">Show All ('.sizeof($projects).')</button>';
+                        echo '<button id="hide_projects" onclick="hideProjects(\'3\',\''.sizeof($projects).'\')" class="btn hidden">Show Top 3</button>';
+                        echo '</div>';
                     }
                 ?>
             </div>
@@ -207,13 +210,27 @@
     </body>
 
     <script>
+        function toggleElement(id, toggle) {
+            var element = document.getElementById(id);
+            if (toggle == "show") {
+                element.classList.remove("hidden");
+            } else {
+                element.classList.add("hidden");
+            }
+        }
         function showProjects(from, to) {
             for (var i=from; i<to; i++) {
-                var project = document.getElementById("project"+i);
-                project.classList.remove("hidden");
+                toggleElement("project"+i, "show")
             }
-            var show = document.getElementById("show_projects");
-            show.classList.add("hidden");
+            toggleElement("show_projects", "hide");
+            toggleElement("hide_projects", "show");
+        }
+        function hideProjects(from, to) {
+            for (var i=from; i<to; i++) {
+                toggleElement("project"+i, "hide")
+            }
+            toggleElement("show_projects", "show");
+            toggleElement("hide_projects", "hide");
         }
 
     </script>
