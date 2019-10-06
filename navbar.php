@@ -2,7 +2,7 @@
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="index.php">
         <img src="media/logo3/vector/isolated-monochrome-white.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        Karsten Lloyd
+        <?php echo ($activePage == "home") ? '' : 'Karsten Lloyd'; ?>
     </a>
 
     <ul class="nav justify-content-center">
