@@ -157,7 +157,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">'.$establishment['establishment'].'</h5>
                                     <p class="card-text">'.$establishment['level'].'</p>
-                                    <p class="card-text"><small class="text-muted">'.date("F Y", strtotime(date($establishment['date_start']))).' - ';
+                                    <p class="card-text"><small class="text-muted text-black">'.date("F Y", strtotime(date($establishment['date_start']))).' - ';
                                     echo ($establishment['date_end'] == '') ? 'Present' : date("F Y", strtotime(date($establishment['date_end'])));
                         echo        '</small></p>
                                 </div>';
