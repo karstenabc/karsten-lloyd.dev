@@ -3,11 +3,11 @@
     <head>
     	<title>Karsten Lloyd</title>
         <?php
-            $rootPath = "";
             $activePage = "portfolio";
-            include('head.php');
-            include('database.php');
-            include('navbar.php');
+            $rootPath = "";
+            include('../private/head.php');
+            include('../private/database.php');
+            include('../private/navbar.php');
         ?>
     </head>
     <body>
@@ -202,7 +202,7 @@
             </div>
         </div>
 
-        <?php include('footer.php'); ?>
+        <?php include('../private/footer.php'); ?>
 
     </body>
 
