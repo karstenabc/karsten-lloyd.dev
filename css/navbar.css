@@ -22,3 +22,22 @@
 .active {
     border-color: #FFF !important;
 }
+
+#toTop {
+    font-size: 30px;
+    color: #FFF;
+    background-color: #3b9bd3;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    border: 2px solid #FFF;
+    cursor: pointer;
+    z-index: 2;
+}
+#toTop:hover {
+    opacity: 1;
+}
