@@ -49,12 +49,13 @@
         <div class="container">
             <h2>Projects</h2>
             <div class="row recent">
+                <div class="card-group">
                 <?php
                     $query = "SELECT * FROM projects ORDER BY date_end = '', date_end DESC";
                     if ($result = mysqli_query($db, $query)) {
                         while ($row = mysqli_fetch_array($result)) {
                             echo '
-                            <div class="col-4">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="card" style="border-color:#'.$row['border'].'">
                                     <div class="card-img-container">
                                         <img src="media/'.$row['img'].'" alt="'.$row['title'].'">
@@ -89,6 +90,7 @@
                     }
                 ?>
             </div>
+            </div>
         </div>
 
         <div class="d">
@@ -100,22 +102,25 @@
                         if ($result = mysqli_query($db, $query)) {
                             while ($row = mysqli_fetch_array($result)) {
                                 echo '
-                                <div class="col-4">
-                                    <div class="card">
+                                <div class="col-sm-12 col-lg-4">
+                                    <div class="card" style="border-color:#'.$row['colour'].'">
                                         <div class="card-img-container">
                                             <img src="media/'.$row['img'].'" alt="'.$row['company'].'">
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">'.$row['job'].'</h5>
                                             <p class="card-text">'.$row['description'].'</p>
-                                            <p class="card-text">Company: '.$row['company'].'</p>
                                             <p class="card-text"><small class="text-muted">'.date("F Y", strtotime(date($row['date_start']))).' - ';
                                             echo ($row['date_end'] == '') ? 'Present' : date("F Y", strtotime(date($row['date_end'])));
                                 echo        '</small></p>
-                                        </div>';
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Company: '.$row['company'].'</li>
+                                            <li class="list-group-item">Role: '.$row['role'].'</li>
+                                        </ul>';
                                         if ($row['link'] != '') {
                                             echo '
-                                            <div class="card-footer bg-transparent">
+                                            <div class="card-footer" style="background-color:#'.$row['colour'].'">
                                                 <a href="'.$row['link'].'" class="card-link">View Site</a>
                                             </div>';
                                         }
