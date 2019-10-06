@@ -121,7 +121,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">'.$row['job'].'</h5>
                                             <p class="card-text">'.$row['description'].'</p>
-                                            <p class="card-text"><small class="text-muted">'.date("F Y", strtotime(date($row['date_start']))).' - ';
+                                            <p class="card-text"><small class="text-muted text-black">'.date("F Y", strtotime(date($row['date_start']))).' - ';
                                             echo ($row['date_end'] == '') ? 'Present' : date("F Y", strtotime(date($row['date_end'])));
                                 echo        '</small></p>
                                         </div>
