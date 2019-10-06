@@ -12,3 +12,13 @@
 .nav-item a {
     text-transform: capitalize;
 }
+
+.nav-item {
+    border: 2px solid #3b9bd3;
+}
+.nav-item:hover {
+    border-color: #65b1dd;
+}
+.active {
+    border-color: #FFF !important;
+}

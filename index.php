@@ -4,7 +4,7 @@
     	<title>Karsten Lloyd</title>
         <?php
             $rootPath = "";
-            $activePage = "index";
+            $activePage = "home";
             include('head.php');
             include('database.php');
             include('navbar.php');
