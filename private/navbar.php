@@ -12,8 +12,8 @@
         <li class="nav-item <?php echo ($activePage == "portfolio") ? 'active' : ''; ?>">
             <a class="nav-link" href="portfolio.php">portfolio</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">contact</a>
+        <li class="nav-item <?php echo ($activePage == "contact") ? 'active' : ''; ?>">
+            <a class="nav-link" href="contact.php">contact</a>
         </li>
     </ul>
 </nav>
