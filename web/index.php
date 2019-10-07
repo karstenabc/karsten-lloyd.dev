@@ -36,7 +36,7 @@
                     $query = "SELECT * FROM projects ORDER BY date_end = '', date_end DESC LIMIT 2";
                     if ($result = mysqli_query($db, $query)) {
                         while ($row = mysqli_fetch_array($result)) {
-                            echo '<div class="col-6">';
+                            echo '<div class="col-sm-12 col-md-6">';
                             echo '  <div class="card recent">';
                             echo '      <img class="card-img-top" src="media/'.$row['img_preview'].'" alt="'.$row['title'].'">';
                             echo '      <div class="card-body">';
