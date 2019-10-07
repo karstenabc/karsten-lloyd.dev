@@ -65,7 +65,7 @@
                             echo '<div class="col-sm-12 col-md-6 col-lg-4 hidden" id=project'.$i.'>';
                         }
                         echo '
-                            <div class="card" style="border-color:#'.$projects[$i]['border'].'">
+                            <div class="card" id="project'.$projects[$i]['id'].'" style="border-color:#'.$projects[$i]['border'].'">
                                 <div class="card-img-container">
                                     <img src="media/'.$projects[$i]['img'].'" alt="'.$projects[$i]['title'].'">
                                 </div>
@@ -85,10 +85,10 @@
                                 if ($projects[$i]['link'] != '' || $projects[$i]['link_client'] != '') {
                                     echo '<div class="card-footer" style="background-color:#'.$projects[$i]['border'].'">';
                                     if ($projects[$i]['link'] != '') {
-                                        echo '<a href="'.$projects[$i]['link'].'" class="card-link">View Project</a>';
+                                        echo '<a href="'.$projects[$i]['link'].'" target="_blank" class="card-link">View Project</a>';
                                     }
                                     if ($projects[$i]['link_client'] != '') {
-                                        echo '<a href="'.$projects[$i]['link_client'].'" class="card-link">Visit Client</a>';
+                                        echo '<a href="'.$projects[$i]['link_client'].'" target="_blank" class="card-link">Visit Client</a>';
                                     }
                                     echo '</div>';
                                 }
@@ -135,7 +135,7 @@
                                         if ($row['link'] != '') {
                                             echo '
                                             <div class="card-footer" style="background-color:#'.$row['colour'].'">
-                                                <a href="'.$row['link'].'" class="card-link">View Site</a>
+                                                <a href="'.$row['link'].'" target="_blank" class="card-link">View Site</a>
                                             </div>';
                                         }
                                         echo '
@@ -193,7 +193,7 @@
                                 if ($establishment['link'] != '') {
                                     echo '
                                     <div class="card-footer" style="background-color:#'.$establishment['colour'].'">
-                                        <a href="'.$establishment['link'].'" class="card-link">Visit Site</a>
+                                        <a href="'.$establishment['link'].'" target="_blank" class="card-link">Visit Site</a>
                                     </div>';
                                 }
                                 echo '
