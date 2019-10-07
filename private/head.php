@@ -18,3 +18,5 @@
 <link rel="stylesheet" href="<?php echo $rootPath; ?>css/navbar.css" type="text/css" />
 
 <link rel="stylesheet" href="<?php echo $rootPath; ?>css/stylesheet.css" />
+
+<link rel="stylesheet" href="<?php echo $rootPath; ?>css/fonts.css" />
