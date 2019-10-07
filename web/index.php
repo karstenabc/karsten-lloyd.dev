@@ -11,20 +11,22 @@
         ?>
     </head>
     <body>
-
-        <?php
-            $projects = array();
-            $query = "SELECT * FROM projects ORDER BY date_end = '', date_end DESC";
-            if ($result = mysqli_query($db, $query)) {
-                while ($row = mysqli_fetch_array($result)) {
-                    array_push($projects, $row);
-                }
-            }
-        ?>
-
         <div class="jumbotron">
             <h1>Karsten Lloyd</h1>
             <h2>Full Stack Developer</h2>
+            <div class="container">
+                <div class="contact-icons">
+                    <a href="https://github.com/karstenabc" target="_blank">
+                        <img src="media/icons/github.svg" alt="github profile"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/karsten-lloyd-500a95164/" target="_blank">
+                        <img src="media/icons/linkedin.svg" alt="linkedin profile"/>
+                    </a>
+                    <a href="contact">
+                        <img src="media/icons/email.svg" alt="contact page"/>
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="container">

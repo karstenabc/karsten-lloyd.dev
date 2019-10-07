@@ -62,7 +62,7 @@
                         if ($i < 3) {
                             echo '<div class="col-sm-12 col-md-6 col-lg-4">';
                         } else {
-                            echo '<div class="col-sm-12 col-md-6 col-lg-4 hidden" id=project'.$i.'>';
+                            echo '<div class="col-sm-12 col-md-6 col-lg-4 hidden" id=project_'.$i.'>';
                         }
                         echo '
                             <div class="card" id="project'.$projects[$i]['id'].'" style="border-color:#'.$projects[$i]['border'].'">
@@ -135,7 +135,7 @@
                                         if ($row['link'] != '') {
                                             echo '
                                             <div class="card-footer" style="background-color:#'.$row['colour'].'">
-                                                <a href="'.$row['link'].'" target="_blank" class="card-link">View Site</a>
+                                                <a href="'.$row['link'].'" target="_blank" class="card-link">Company Site</a>
                                             </div>';
                                         }
                                         echo '
@@ -220,14 +220,14 @@
         }
         function showProjects(from, to) {
             for (var i=from; i<to; i++) {
-                toggleElement("project"+i, "show")
+                toggleElement("project_"+i, "show")
             }
             toggleElement("show_projects", "hide");
             toggleElement("hide_projects", "show");
         }
         function hideProjects(from, to) {
             for (var i=from; i<to; i++) {
-                toggleElement("project"+i, "hide")
+                toggleElement("project_"+i, "hide")
             }
             toggleElement("show_projects", "show");
             toggleElement("hide_projects", "hide");
