@@ -194,6 +194,9 @@ h2 {
     box-shadow: 0px 0px 0px 0px;
     border-bottom: 2px solid red;
 }
+.input-invalid {
+    border-bottom: 2px solid red;
+}
 .input-center {
     text-align: center;
 }
@@ -213,6 +216,11 @@ h2 {
     color: #FFF;
     background-color: #3b9bd3;
     border: 2px outset #3b9bd3;
+}
+.form-error {
+    color: red;
+    display: none;
+    margin-top: 10px;
 }
 .alert {
     border-radius: 0px;

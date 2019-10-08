@@ -35,9 +35,9 @@
             }
 
             if (isset($_POST['send'])) {
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $body = $_POST['message'];
+                $name = htmlspecialchars(trim($_POST['name']), ENT_QUOTES, 'UTF-8');
+                $email = htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8');
+                $body = htmlspecialchars(trim($_POST['message']), ENT_QUOTES, 'UTF-8');
                 $time = date("d/m/Y H:i:s");
 
                 $message = '<table border="0" width="100%" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">';
@@ -80,14 +80,15 @@
             <div class="container">
                 <h2>Email Form</h2>
                 <div class="form">
-                    <form action="" method="POST">
-                        <input type="text" name="name" class="contact-input input-center" placeholder="Name">
+                    <form name="contact-form" action="" method="POST" onsubmit="return submitForm()">
+                        <input type="text" id="name" name="name" class="contact-input input-center" placeholder="Name" onblur="checkValid(this)">
                         <br />
-                        <input type="email" name="email" class="contact-input input-center" placeholder="Email">
+                        <input type="email" id="email" name="email" class="contact-input input-center" placeholder="Email" onblur="checkValid(this)">
                         <br />
-                        <textarea class="contact-input" name="message" rows="3" placeholder="Message"></textarea>
+                        <textarea class="contact-input" id="message" name="message" rows="3" placeholder="Message" onblur="checkValid(this)"></textarea>
                         <br />
                         <button type="submit" name="send">Send</button>
+                        <p id="submit_error" class="form-error">Please make sure you have filled out all of the fields.</p>
                     </form>
                 </div>
                 <br />
@@ -98,6 +99,28 @@
     </body>
 
     <script>
-
+        function checkValid(e) {
+            if (e.value != "") {
+                e.classList.remove("input-invalid");
+            }
+        }
+        function checkInput(e) {
+            if (e.value == "") {
+                e.classList.add("input-invalid");
+                return false;
+            }
+            return true;
+        }
+        function submitForm() {
+            var submit = true;
+            document.getElementById("submit_error").style.display = "none";
+            submit = checkInput(document.getElementById("name"));
+            submit = checkInput(document.getElementById("email"));
+            submit = checkInput(document.getElementById("message"));
+            if (!submit) {
+                document.getElementById("submit_error").style.display = "block";
+            }
+            return submit;
+        }
     </script>
 </html>
