@@ -24,7 +24,7 @@
     </div>
 </nav>
 
-<button onclick="topFunction()" id="toTop" title="Go to top">&#8673;</button>
+<button onclick="topFunction()" id="toTop" title="Go to top" class="hidden">&#8673;</button>
 
 <script>
     window.onscroll = function() {
@@ -32,9 +32,9 @@
     };
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("toTop").style.display = "block";
+            document.getElementById("toTop").classList.remove("hidden");
         } else {
-            document.getElementById("toTop").style.display = "none";
+            document.getElementById("toTop").classList.add("hidden");
         }
     }
     function topFunction() {
