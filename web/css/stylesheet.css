@@ -1,17 +1,35 @@
 /* INDEX */
 .jumbotron {
     text-align: center;
-    height: 38vh;
-    min-height: 300px;
-    max-height: 350px;
+    padding: 20px;
+    height: 20vh;
+    min-height: 250px;
 }
 .jumbotron h1 {
+    font-size: 2.3em;
     font-family: Raleway;
 }
 .jumbotron h2 {
+    font-size: 2em;
     font-family: Raleway-light;
     padding-top: 0px;
     margin-top: 15px;
+}
+@media (min-width: 400px) {
+    .jumbotron h1 {
+        font-size: 2.5em;
+    }
+    .jumbotron h2 {
+        font-size: 2.3em;
+    }
+}
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 44px 32px;
+        height: 38vh;
+        min-height: 300px;
+        max-height: 350px;
+    }
 }
 .contact-icons {
     text-align: center;
@@ -136,8 +154,8 @@ h2 {
 }
 .recent {
     border-width: 1px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 .recent > .card-body > .card-link {
     color:inherit;
@@ -145,7 +163,6 @@ h2 {
 .recent > .card-links {
     color: #007bff;
     border-top: 1px solid rgba(0, 0, 0, .125);
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
     padding: 10px 20px;
 }
 
@@ -177,6 +194,9 @@ h2 {
     border-bottom: 2px solid red;
 }
 .input-center {
+    text-align: center;
+}
+.form > form > textarea::placeholder {
     text-align: center;
 }
 .form > form > button {

@@ -40,3 +40,36 @@
 #toTop:hover {
     opacity: 1;
 }
+
+.navbar-toggler {
+    border-color: #FFF !important;
+    border-radius: 2px;
+}
+.navbar-toggler-icon {
+    color: #FFF;
+}
+.navbar-collapse {
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+}
+
+.menu-toggle {
+    border: 2px solid #FFF;
+    background: none;
+}
+.menu-toggle img {
+    padding-bottom: 2px;
+}
+.navbar-nav {
+    text-align: center;
+    position: inherit;
+}
+
+
+@media (min-width: 576px) {
+    .navbar-nav {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+}
