@@ -213,3 +213,7 @@ h2 {
     background-color: #3b9bd3;
     border: 2px outset #3b9bd3;
 }
+.alert {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
