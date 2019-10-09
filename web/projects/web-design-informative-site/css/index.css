@@ -1,0 +1,33 @@
+.content {
+    padding-top: 80px;
+}
+
+
+
+.options {
+    text-align: center;
+    margin-top: 60px;
+}
+.options a {
+    color: #000000;
+    text-decoration: none;
+    line-height: 3;
+    border: 2px solid #4d4d4d;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.options a:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+
+.left {
+    /* margin-right: 10px; */
+}
+.right {
+    /* margin-left: 10px; */
+}

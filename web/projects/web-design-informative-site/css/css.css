@@ -1,0 +1,258 @@
+#introduction h4 {
+    text-align: left;
+    font-size: 18px;
+    font-weight: normal;
+    padding-left: 20px; /* match the indentation of the other text in the introduction */
+    margin-top: 25px;
+    margin-bottom: -5px;
+}
+.introduction_inline, .introduction_id {
+    color: red;
+}
+#introduction_addressing_1:hover,
+#introduction_addressing_2:hover,
+#introduction_addressing_3:hover,
+#introduction_inserting_1:hover,
+#introduction_inserting_2:hover,
+#introduction_inserting_3:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Create side by side content stack for smaller screens */
+.row {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e5e5e5;
+}
+.row h1 {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.row p {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+.row-column {
+    display:inline-block;
+    margin-top: 0px;
+/* margin-bottom: 20px; */
+    width: 45%;
+}
+.left {
+    margin-right: 5%;
+    vertical-align: top;
+}
+@media (max-width: 900px) {
+	.row-column {
+		width: 100%;
+        padding-bottom: 10px;
+	}
+    .left {
+        margin-right: 0px;
+        border-bottom: 2px dashed #e5e5e5;
+    }
+}
+
+
+/* Styles for right side column */
+.demonstration {
+    text-align: center;
+}
+.demonstration p {
+    text-align: center;
+}
+.demonstration input,
+.demonstration select {
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #000000;
+    width: 150px;
+    /* height: 30px; */
+    margin-top: 30px;
+}
+.demonstration select {
+    height: 30px;
+    margin-top: 0px;
+}
+.demonstration button {
+    font-size: 15px;
+    border: 2px solid #000000;
+    background-color: #FFFFFF;
+    padding: 3px;
+}
+.demonstration button:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+.demonstration_value {
+    font-size: 18px;
+    font-weight: bold;
+}
+.demonstration_property {
+    font-size: 22px;
+}
+
+#warning_color,
+#warning_size,
+#warning_border {
+    color: red;
+    display: none;
+}
+
+
+.demonstration_layout_padding {
+    background-color: #dcd8f4;
+    width: 50%;
+    height: 130px;
+    margin: 0 auto;
+    margin-top: -20px;
+}
+.demonstration_layout_size {
+    background-color: #e2efd5;
+    width: 50%;
+    height: 30px;
+    border: 2px solid #FFFFFF;
+    padding-bottom: 30px;
+    margin: 0 auto;
+}
+.demonstration_layout_title {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.demonstration_layout_body {
+    width: 80%;
+    border: 2px solid #e5e5e5;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.demonstration_layout_body p {
+    margin-top: 25px;
+}
+.demonstration_layout_div {
+    width: 30%;
+    height: 75px;
+    border: 2px solid red;
+    margin-bottom: 10px;
+}
+.align_center {
+    margin: 0 auto;
+}
+.align_right {
+    margin-left: auto;
+    margin-right: 0;
+}
+.demonstration_layout_div > .demonstration_p_default,
+.demonstration_layout_div > .demonstration_p_padded {
+    text-align: left;
+    margin: 0px;
+}
+.demonstration_layout_div > .demonstration_p_padded {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.demonstration_border_div {
+    width: 30%;
+    height: 25px;
+    border: 2px solid red;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.demonstration_border_div p {
+    padding-top: 2px;
+    margin: 0;
+}
+.border_dashed {
+    border-style: dashed;
+}
+.border_dotted {
+    border-style: dotted;
+}
+.border_double {
+    border-width: 3px;
+    border-style: double;
+}
+.border_ridge {
+    border-style: ridge;
+}
+.border_groove {
+    border-style: groove;
+}
+.border_inset {
+    border-style: inset;
+}
+.border_outset {
+    border-style: outset;
+}
+.border_hidden {
+    border-style: hidden;
+}
+.border_none {
+    border-style: none;
+}
+.border_example {
+    border: 2px dashed red;
+    border-radius: 10px;
+    border-spacing: 5px;
+}
+.width_pc {
+    width: 50%;
+}
+.width_px {
+    width: 50px;
+}
+.height_container {
+    height: 200px;
+}
+.height_pc {
+    height: 50%;
+}
+.height_px {
+    height: 50px;
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+table button {
+    width: 80px;
+}
+.button_small {
+    width: 37px;
+}
+.table_input {
+    margin-top: 5px !important;
+}
+
+
+
+.definition {
+    text-decoration: underline;
+}
+.definition:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+/* MAKE ALL CONTENT ELEMENTS HAVE THE SAME FONT */
+ol, dl, table {
+    font-family: 'Roboto', sans-serif;
+}
+/* CREATE CODE TAG FOR KEYWORDS */
+code {
+    color: red;
+    font-size: 18px;
+    text-align: left;
+}
+/* CREATE CODE BLOCK CLASS FOR LINES OF CODE */
+.code-block {
+    color: red;
+    background-color: #e5e5e5;
+    text-align: left !important;
+    font-family: monospace !important;
+    margin-top: 0px;
+}
