@@ -19,7 +19,7 @@
                     <a href="https://github.com/karstenabc" target="_blank">
                         <img src="media/icons/github.svg" alt="github profile"/>
                     </a>
-                    <a href="https://www.linkedin.com/in/karsten-lloyd-500a95164/" target="_blank">
+                    <a href="https://www.linkedin.com/in/karsten-lloyd/" target="_blank">
                         <img src="media/icons/linkedin.svg" alt="linkedin profile"/>
                     </a>
                     <a href="contact">
