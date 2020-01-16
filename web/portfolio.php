@@ -18,29 +18,38 @@
         </div>
         <div class="d">
             <div class="container">
-                <h2>Development</h2>
                 <div class="row">
-                    <?php
-                        $categories = array();
-                        $query = "SELECT * FROM knowledge";
-                        if ($result = mysqli_query($db, $query)) {
-                            while ($row = mysqli_fetch_array($result)) {
-                                array_push($categories, $row);
-                            }
-                        }
-                        for ($i=0; $i<sizeof($categories); $i++) {
-                            $category = $categories[$i];
-                            echo '<div class="col-12">';
-
-                            $query = "SELECT * FROM knowledge_items WHERE categoryID = $category[0] ORDER BY importance";
+                    <div class="col-md-8 col-12">
+                        <h2>Development</h2>
+                        <div class="row">
+                            <?php
+                            $categories = array();
+                            $query = "SELECT * FROM knowledge";
                             if ($result = mysqli_query($db, $query)) {
-                                while ($item = mysqli_fetch_array($result)) {
-                                    echo '<span class="pill">'.$item['item'].'</span>';
+                                while ($row = mysqli_fetch_array($result)) {
+                                    array_push($categories, $row);
                                 }
                             }
-                            echo '</div>';
-                        }
-                    ?>
+                            for ($i = 0; $i < sizeof($categories); $i++) {
+                                $category = $categories[$i];
+                                echo '<div class="col-12">';
+                                $query = "SELECT * FROM knowledge_items WHERE categoryID = $category[0] ORDER BY importance";
+                                if ($result = mysqli_query($db, $query)) {
+                                    while ($item = mysqli_fetch_array($result)) {
+                                        echo '<span class="pill">'.$item['item'].'</span>';
+                                    }
+                                }
+                                echo '</div>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-12 download">
+                        <h2>Documents</h2>
+                        <span>CV - Resume (PDF)</span>
+                    </div>
+
                 </div>
                 <br />
             </div>
@@ -69,7 +78,7 @@
                                 <div class="card-img-container">
                                     <img src="media/'.$projects[$i]['img'].'" alt="'.$projects[$i]['title'].'">
                                 </div>
-                                <div class="card-body" style="background-color:#'.$projects[$i]['border'].'; color:#FFF;">
+                                <div class="card-body" style="background-color:#'.$projects[$i]['border'].'; color:#'.$projects[$i]['text'].';">
                                     <h5 class="card-title">'.$projects[$i]['title'].'</h5>
                                     <p class="card-text">'.$projects[$i]['description'].'</p>
                                     <p class="card-text"><small class="text-muted">'.date("F Y", strtotime(date($projects[$i]['date_start']))).' - ';
