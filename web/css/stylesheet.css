@@ -141,8 +141,8 @@ h2 {
 .card-link-home {
     color: #000;
 }
-.card-body > .card-text > .text-muted {
-    color: #e5e5e5 !important;
+.card-body > .card-text small {
+    /* color: #e5e5e5 !important; */
     font-style: italic;
 }
 .card-body > .card-text > .text-black {
@@ -167,6 +167,36 @@ h2 {
     padding: 10px 20px;
 }
 
+
+.download {
+    text-align: left;
+}
+.download h2 {
+    margin-bottom: 13px;
+}
+.download a {
+    color: #212529;
+    text-decoration: none;
+}
+.download span {
+    border: 2px solid #3B9BD3;
+    font-family: Raleway;
+    border-radius: 1px;
+    line-height: 2;
+    padding: 5px 10px;
+    height: 32px;
+    /* display: inline-block; */
+}
+.download span:hover {
+    color: #FFF;
+    background-color: #3B9BD3;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .download {
+        text-align: right;
+    }
+}
 
 /* CONTACT */
 .form {
