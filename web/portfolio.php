@@ -89,10 +89,10 @@
                                         if ($experience[$i]['client'] != '' || $experience[$i]['link'] != '') {
                                             echo '<div class="card-footer" style="background-color:#'.$experience[$i]['colour'].'">';
                                             if ($experience[$i]['client'] != '') {
-                                                echo '<a href="'.$experience[$i]['client'].'" target="_blank" class="card-link">Client Site</a>';
+                                                echo '<a href="'.$experience[$i]['client'].'" target="_blank" rel="noopener" class="card-link">Client Site</a>';
                                             }
                                             if ($experience[$i]['link'] != '') {
-                                                echo '<a href="'.$experience[$i]['link'].'" target="_blank" class="card-link">Project Link</a>';
+                                                echo '<a href="'.$experience[$i]['link'].'" target="_blank" rel="noopener" class="card-link">Project Link</a>';
                                             }
                                             echo '</div>';
                                         }
@@ -160,10 +160,10 @@
                                     if ($projects[$i]['link'] != '' || $projects[$i]['link_client'] != '') {
                                         echo '<div class="card-footer" style="background-color:#'.$projects[$i]['border'].'">';
                                         if ($projects[$i]['link'] != '') {
-                                            echo '<a style="color:#'.$projects[$i]['text'].'" href="'.$projects[$i]['link'].'" target="_blank" class="card-link">View Project</a>';
+                                            echo '<a style="color:#'.$projects[$i]['text'].'" href="'.$projects[$i]['link'].'" target="_blank" rel="noopener" class="card-link">View Project</a>';
                                         }
                                         if ($projects[$i]['link_client'] != '') {
-                                            echo '<a href="'.$projects[$i]['link_client'].'" target="_blank" class="card-link">Visit Client</a>';
+                                            echo '<a href="'.$projects[$i]['link_client'].'" target="_blank" rel="noopener" class="card-link">Visit Client</a>';
                                         }
                                         echo '</div>';
                                     }
@@ -228,7 +228,7 @@
                                 if ($establishment['link'] != '') {
                                     echo '
                                     <div class="card-footer" style="background-color:#'.$establishment['colour'].'">
-                                        <a href="'.$establishment['link'].'" target="_blank" class="card-link">Visit Site</a>
+                                        <a href="'.$establishment['link'].'" target="_blank" rel="noopener" class="card-link">Visit Site</a>
                                     </div>';
                                 }
                                 echo '
