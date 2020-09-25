@@ -1,12 +1,13 @@
+import React from 'react'
 import Head from 'next/head'
-import styles from './layout.module.css'
-import Link from 'next/link'
-import React from "react"
+import styles from '../styles/layout.module.css'
+import fonts from '../styles/font.module.css'
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 
-export const siteTitle = 'Karsten Lloyd\'s Site';
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+
+export const siteTitle = 'Karsten Lloyd\'s Site'
 
 
 function nav(title, path, active) {
@@ -41,10 +42,11 @@ export default function Layout({ children, page, header }) {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
-        <div className={styles.title}>
-          { header }
-        </div>
+        { page !== 'home' && 
+          <div className={styles.title + ' ' + fonts.title}>
+            { header }
+          </div>
+        }
         <main>{children}</main>
       </div>
   )

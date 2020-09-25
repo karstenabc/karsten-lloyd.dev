@@ -1,13 +1,11 @@
 /* CARD COMPONENT STYLES */
 .card {
-    font-family: Raleway, Serif;
+    font-family: 'montserrat';
     margin-bottom: 30px;
     border-radius: 31px;
     border-width: 2px;
 }
 .cardImgContainer {
-    /* color: #FFF; */
-    /* background-color: #3b9bd3; */
     text-align: center;
     font-size: 26px;
     border-color: #3b9bd3 !important;
@@ -22,11 +20,10 @@
 }
 .cardTitle {
     text-align: center;
-    font-family: Raleway, serif;
+    font-weight: bold;
 }
 .cardText {
     text-align: justify;
-    font-family: Roboto, serif;
     padding: 0 20px;
 }
 .cardFooter {
@@ -39,6 +36,7 @@
 .cardBody > .cardText small {
     /* color: #e5e5e5 !important; */
     font-style: italic;
+    font-family: 'firecode';
 }
 .cardBody > .card-text > .text-black {
     color: #000 !important;

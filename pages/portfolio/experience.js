@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Head from "next/head";
 import fetch from 'isomorphic-unfetch'
-import styles from '../../components/layout.module.css'
+import styles from '../../styles/layout.module.css'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row"
 import Layout from "../../components/layout";
@@ -20,15 +20,10 @@ class Experience extends Component {
   }
   render() {
     const { experience } = this.props;
-
-    const title = "Portfolio | Karsten Lloyd";
-    const section = "portfolio";
-    const heading = "EXPERIENCE";
-    const subheading = <>My previous work</>;
     return (
-      <Layout page={section} header={<><h1>{heading}</h1><p className={styles.subheading}>{subheading}</p></>}>
+      <Layout page='portfolio' header={<><h1>EXPERIENCE</h1><p className={styles.subheading}>My previous work</p></>}>
         <Head>
-          <title>{title}</title>
+          <title>Portfolio | Karsten Lloyd</title>
         </Head>
         <Container>
           <nav aria-label="breadcrumb">

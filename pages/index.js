@@ -1,22 +1,20 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/font.module.css'
-import Link from "next/link";
+import Layout from '../components/layout'
+import { TitleContainer, Title, SubTitle, Divider } from '../styles/index'
+
 
 const Home = () => (
   <Layout page={"home"}>
     <Head>
-      <title>test</title>
+      <title>Karsten Lloyd</title>
+      <link href="/static/fonts/fonts.css" rel="stylesheet"/>
     </Head>
-    <section className={utilStyles.headingMd}>
-      <p>[Your Self Introduction]</p>
-      <p>
-        (This is a sample website - you’ll be building a site like this on{' '}
-        <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-      </p>
-      {/*<Link href="projects/advent-of-code/2018"><a>link</a></Link>*/}
-    </section>
+    <TitleContainer>
+      <Title>Karsten Lloyd</Title>
+      <Divider/>
+      <SubTitle>Front End Developer</SubTitle>
+    </TitleContainer>
   </Layout>
 );
 

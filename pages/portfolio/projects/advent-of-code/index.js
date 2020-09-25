@@ -1,6 +1,6 @@
 import React from "react"
 import Link from 'next/link'
-import styles from '../../../../components/layout.module.css'
+import styles from '../../../../styles/layout.module.css'
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
