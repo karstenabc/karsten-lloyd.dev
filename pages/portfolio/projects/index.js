@@ -34,8 +34,8 @@ function Index({ projects }) {
 
             <h2 id="experience">Projects</h2>
             <Row>
-              {projects.results.map(e => (
-                  <div className="col-sm-12 col-md-6 col-lg-4">
+              {projects.results.map((e, index) => (
+                  <div className="col-sm-12 col-md-6 col-lg-4" key={{index}}>
                     { Card('project', e) }
                   </div>
               ))}
