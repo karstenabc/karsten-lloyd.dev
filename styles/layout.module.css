@@ -118,3 +118,7 @@
 .viewAll {
     margin: 0 auto;
 }
+
+.externalLinks a {
+    text-decoration: none;
+}

@@ -19,6 +19,6 @@
     "react-html-parser": "^2.0.2",
     "serverless-mysql": "^1.5.4",
     "sql-template-strings": "^2.2.2",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.2.0"
   }
 }

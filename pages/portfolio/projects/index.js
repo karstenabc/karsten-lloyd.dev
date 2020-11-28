@@ -18,16 +18,11 @@ Index.getInitialProps = async () => {
 
 
 function Index({ projects }) {
-  const title = "Portfolio | Karsten Lloyd";
-  const section = "portfolio";
-  const heading = "PROJECTS";
-  const subheading = <>My projects</>;
-
   return (
       <>
-        <Layout page={section} header={<><h1>{heading}</h1><p className={styles.subheading}>{subheading}</p></>}>
+        <Layout page='portfolio' header={<><h1>PROJECTS</h1><p className={styles.subheading}>My projects</p></>}>
           <Head>
-            <title>{title}</title>
+            <title>Portfolio | Karsten Lloyd</title>
           </Head>
           <Container>
             <nav aria-label="breadcrumb">

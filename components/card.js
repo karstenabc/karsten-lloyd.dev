@@ -1,6 +1,6 @@
 import React from "react"
 import ReactHtmlParser from 'react-html-parser';
-import styles from '../components/components.module.css'
+import styles from '../styles/components.module.css'
 
 
 // Return formatted string for dates

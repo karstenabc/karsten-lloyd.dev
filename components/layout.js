@@ -3,7 +3,6 @@ import Head from 'next/head'
 import styles from '../styles/layout.module.css'
 import fonts from '../styles/font.module.css'
 
-
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 

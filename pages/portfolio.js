@@ -53,9 +53,9 @@ class Portfolio extends Component {
     const subheading = <>My <a href="#languages">languages</a>, <a href="#experience">experience</a>, <a href="#projects">projects</a> and <a href="#education">education</a></>;
 
     // Pills
-    const languages = ['JavaScript', 'CSS', 'HTML', 'PHP', 'Python', 'SQL', 'Dart'];
-    const frameworks = ['Laravel', 'React-Native', 'NextJS', 'jQuery', 'Flutter', 'RedBean', 'Twig', 'Blade'];
-    const tools = ['Android Studio', 'Git', 'phpMyAdmin', 'Unix', 'postman'];
+    const languages = ['JavaScript', 'PHP', 'Python', 'MySQL', 'Dart', 'Java', 'HTML', 'CSS'];
+    const frameworks = ['Laravel', 'React-Native', 'NextJS', 'jQuery', 'Flutter'];
+    const tools = ['Git', 'phpMyAdmin', 'Linux/Mac/Windows', 'VS Code', 'IntelliJ', 'Postman'];
     return (
       <Layout page='portfolio' header={<><h1>PORTFOLIO</h1><p className={styles.subheading}>{subheading}</p></>}>
         <Head>
