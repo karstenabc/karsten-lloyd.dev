@@ -18,16 +18,11 @@ Index.getInitialProps = async () => {
 
 
 function Index({ projects }) {
-  const title = "Portfolio | Karsten Lloyd";
-  const section = "portfolio";
-  const heading = "PROJECTS";
-  const subheading = <>My projects</>;
-
   return (
       <>
-        <Layout page={section} header={<><h1>{heading}</h1><p className={styles.subheading}>{subheading}</p></>}>
+        <Layout page='portfolio' header={<><h1>PROJECTS</h1><p className={styles.subheading}>My projects</p></>}>
           <Head>
-            <title>{title}</title>
+            <title>Portfolio | Karsten Lloyd</title>
           </Head>
           <Container>
             <nav aria-label="breadcrumb">
@@ -39,8 +34,8 @@ function Index({ projects }) {
 
             <h2 id="experience">Projects</h2>
             <Row>
-              {projects.results.map(e => (
-                  <div className="col-sm-12 col-md-6 col-lg-4">
+              {projects.results.map((e, index) => (
+                  <div className="col-sm-12 col-md-6 col-lg-4" key={{index}}>
                     { Card('project', e) }
                   </div>
               ))}

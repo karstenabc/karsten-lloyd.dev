@@ -1,4 +1,3 @@
-import styles from "./layout.module.css";
 import React from "react";
 import Layout from "./layout";
 import Head from "next/head";
@@ -14,8 +13,6 @@ function Title(title, subheading) {
       </>
   );
 }
-
-
 
 
 function Page(title, section, heading, subheading, breadcrumb, children) {
