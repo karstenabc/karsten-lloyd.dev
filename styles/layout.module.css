@@ -1,0 +1,120 @@
+.nav {
+    background-color: #3B9BD3;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.nav-bar {
+    display: inline-flex;
+    padding: 0 !important;
+    margin: 1rem 0 !important;
+}
+.nav a {
+    padding: 6px 20px !important;
+    margin: 0 10px !important;
+}
+.nav a:hover, .navActive {
+    color: #3B9BD3 !important;
+    background-color: white;
+    border-radius: 18px;
+    text-decoration: none;
+}
+.navToggle {
+    color: white;
+    background-color: white;
+}
+
+.title {
+    color: white;
+    background-color: #65B1DD;
+    font-size: 1.6em;
+    text-align: center;
+    padding: 35px 0;
+}
+.title h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    color: whitesmoke;
+    font-size: 0.8em;
+}
+.subheading a {
+    color: white;
+    font-family: 'source';
+    font-weight: bold;
+}
+.subheading a:hover {
+    color: white;
+}
+
+
+.breadCrumb {
+    background-color: unset !important;
+    padding-left: 0 !important;
+}
+.breadCrumb > li > a {
+    color: #3B9BD3 !important;
+}
+
+
+.tile > div {
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #65b1dd;
+    border-radius: 26px;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.5);
+}
+.tile > div > p {
+    text-align: center;
+    font-size: 3em;
+    font-family: Raleway, serif;
+    background: -webkit-linear-gradient(#3B9BD3, #65B1DD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 20px;
+}
+.tile > div > .subtitle {
+    color: white;
+    background-color: #65b1dd;
+    text-align: center;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+.tile > div > .subtitle > p {
+    font-family: Roboto, Serif;
+    /*font-weight: bold;*/
+    padding: 7px;
+    margin-bottom: 0;
+}
+.tile:hover {
+    text-decoration: none;
+}
+.tile:hover div {
+    background-color: #65b1dd;
+}
+.tile:hover div > p {
+    background: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    color: white;
+}
+
+
+.pill {
+    color: white;
+    background-color: #3B9BD3;
+    border-radius: 14px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+
+.viewAll {
+    margin: 0 auto;
+}
