@@ -35,7 +35,7 @@ function specifications(specs, table, last) {
       if (i === specs.length - 1 && last) {
         radius = '30px';
       }
-      list.push(<li className="list-group-item" style={{borderRadius: radius}}>{content}</li>);
+      list.push(<li className="list-group-item" style={{borderRadius: radius}} key={{i}}>{content}</li>);
     }
     return <ul className="list-group list-group-flush">{ list }</ul>;
   }
@@ -47,7 +47,7 @@ function footer(links, colour) {
   if (links.length > 0) {
     let list = [];
     for (let i = 0; i < links.length; i++) {
-      list.push(<a href={links[i].link} target="_blank" rel="noopener">{links[i].title}</a>);
+      list.push(<a href={links[i].link} target="_blank" rel="noopener" key={{i}}>{links[i].title}</a>);
     }
     return <div className={styles.cardFooter} style={{backgroundColor: colour}}>{list}</div>;
   }
