@@ -37,7 +37,6 @@ export default function Layout({ children, page, header }) {
             <Nav className="mr-auto" className={styles.navLinks}>
               { nav("HOME", "/", page === "home") }
               { nav("PORTFOLIO", "/portfolio", page === "portfolio") }
-              { nav("CONTACT", "/contact", page === "contact") }
             </Nav>
           </Navbar.Collapse>
         </Navbar>
