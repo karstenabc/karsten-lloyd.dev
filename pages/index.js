@@ -1,11 +1,10 @@
 import React from "react"
 import Head from "next/head"
-import styles from '../styles/layout.module.css'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row"
+import styles from '../styles/layout.module.css'
 import Layout from "../components/layout";
 import { TitleContainer, Title, SubTitle, Divider, ContactContainer } from '../styles/index'
-
 
 const Home = () => (
   <Layout page={"home"}>
@@ -54,6 +53,6 @@ const Home = () => (
       </Row>
     </Container>
   </Layout>
-);
+)
 
 export default Home;

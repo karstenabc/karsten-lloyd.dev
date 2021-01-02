@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import Head from "next/head";
 import fetch from 'isomorphic-unfetch'
-import styles from '../../styles/layout.module.css'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row"
+import styles from '../../styles/layout.module.css'
 import Layout from "../../components/layout";
 import Card from "../../components/card"
 
 class Experience extends Component {
   static async getInitialProps({ req }) {
-    let pageRequest = `https://api.karsten-lloyd.dev/site.php/experience`;
-    let res = await fetch(pageRequest);
-    let experience = await res.json();
-    return { experience: experience }
+    let pageRequest = `https://api.karsten-lloyd.dev/site.php/experience`
+    let response = await fetch(pageRequest)
+    let data = await response.json()
+    return { experience: data.experience }
   }
   constructor(props) {
-      super(props);
+      super(props)
       this.state = {}
   }
   render() {
@@ -35,7 +35,7 @@ class Experience extends Component {
 
           <h2 id="experience">Experience</h2>
           <Row>
-            {experience && experience.results.map((e, index) => (
+            {experience && experience.map((e, index) => (
                 <div key={index} className="col-sm-12 col-md-6 col-lg-4">
                   { Card('experience', e) }
                 </div>

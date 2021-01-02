@@ -48,6 +48,9 @@
 .subheading a:hover {
     color: white;
 }
+.jumbotron {
+    text-align: center;
+}
 
 
 .breadCrumb {

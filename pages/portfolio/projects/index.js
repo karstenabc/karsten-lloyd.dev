@@ -1,20 +1,19 @@
 import React from "react"
 import Head from "next/head";
 import fetch from 'isomorphic-unfetch'
-import styles from '../../../styles/layout.module.css'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row"
+import styles from '../../../styles/layout.module.css'
 import Layout from "../../../components/layout";
 import Card from "../../../components/card"
 
-
 // Get page data from DB
 Index.getInitialProps = async () => {
-  let pageRequest = `https://api.karsten-lloyd.dev/site.php/projects`;
-  let res = await fetch(pageRequest);
-  let projects = await res.json();
-  return { projects: projects }
-};
+  let pageRequest = `https://api.karsten-lloyd.dev/site.php/projects`
+  let response = await fetch(pageRequest)
+  let data = await response.json()
+  return { projects: data.projects }
+}
 
 
 function Index({ projects }) {
@@ -34,7 +33,7 @@ function Index({ projects }) {
 
             <h2 id="experience">Projects</h2>
             <Row>
-              {projects.results.map((e, index) => (
+              {projects.map((e, index) => (
                   <div className="col-sm-12 col-md-6 col-lg-4" key={{index}}>
                     { Card('project', e) }
                   </div>
@@ -43,7 +42,7 @@ function Index({ projects }) {
           </Container>
         </Layout>
       </>
-  );
+  )
 }
 
 export default Index
