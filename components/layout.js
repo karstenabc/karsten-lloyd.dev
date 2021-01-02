@@ -1,10 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import styles from '../styles/layout.module.css'
-import fonts from '../styles/font.module.css'
-
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
+import fonts from '../styles/font.module.css'
+import styles from '../styles/layout.module.css'
 
 export const siteTitle = 'Karsten Lloyd\'s Site'
 
@@ -40,8 +39,13 @@ export default function Layout({ children, page, header }) {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        { page !== 'home' && 
+        { page !== 'home' && page !== 'project' &&
           <div className={styles.title + ' ' + fonts.title}>
+            { header }
+          </div>
+        }
+        { page !== 'home' && page === 'project' &&
+          <div className={styles.jumbotron}>
             { header }
           </div>
         }
