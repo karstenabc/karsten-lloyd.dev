@@ -1,24 +1,24 @@
 @font-face {
-    font-family: 'quicksand';
-    src: url('/fonts/quicksand.ttf');
+  font-family: 'quicksand';
+  src: url('/fonts/quicksand.ttf');
 }
 
 @font-face {
-    font-family: 'firecode';
-    src: url('/fonts/firecode.ttf');
+  font-family: 'firecode';
+  src: url('/fonts/firecode.ttf');
 }
 
 @font-face {
-    font-family: 'montserrat';
-    src: url('/fonts/montserrat-regular.ttf');
+  font-family: 'montserrat';
+  src: url('/fonts/montserrat-regular.ttf');
 }
 
 @font-face {
-    font-family: 'source';
-    src: url('/fonts/sourcecode.ttf');
+  font-family: 'source';
+  src: url('/fonts/sourcecode.ttf');
 }
 
 .title h1 {
-    font-family: 'quicksand';
-    font-weight: 200;
+  font-family: 'quicksand';
+  font-weight: 200;
 }

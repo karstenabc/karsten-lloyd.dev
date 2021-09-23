@@ -1,19 +1,17 @@
-import React from "react"
+import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import styles from '../styles/components.module.css'
-
+import styles from '../styles/components.module.css';
 
 // Return formatted string for dates
 function dateString(start, end) {
   const options = { year: 'numeric', month: 'long' };
-  let from = new Date(start).toLocaleDateString("en-UK", options);
-  let to = "Present";
+  let from = new Date(start).toLocaleDateString('en-UK', options);
+  let to = 'Present';
   if (end) {
-    to = new Date(end).toLocaleDateString("en-UK", options);
+    to = new Date(end).toLocaleDateString('en-UK', options);
   }
   return from + ' - ' + to;
 }
-
 
 // Return specification section
 function specifications(specs, table, last) {
@@ -23,36 +21,48 @@ function specifications(specs, table, last) {
     for (let i = 0; i < specs.length; i++) {
       let content = specs[i].spec + ' ' + specs[i].info;
       if (table) {
-        content = <table style={{width: '100%'}}>
-          <tbody>
-          <tr>
-            <td>{specs[i].spec}</td>
-            <td style={{width: '60px', textAlign: 'right'}}>{specs[i].info}</td>
-          </tr>
-          </tbody>
-        </table>;
+        content = (
+          <table style={{ width: '100%' }}>
+            <tbody>
+              <tr>
+                <td>{specs[i].spec}</td>
+                <td style={{ width: '60px', textAlign: 'right' }}>{specs[i].info}</td>
+              </tr>
+            </tbody>
+          </table>
+        );
       }
       if (i === specs.length - 1 && last) {
         radius = '30px';
       }
-      list.push(<li className="list-group-item" style={{borderRadius: radius}} key={{i}}>{content}</li>);
+      list.push(
+        <li className='list-group-item' style={{ borderRadius: radius }} key={{ i }}>
+          {content}
+        </li>
+      );
     }
-    return <ul className="list-group list-group-flush">{ list }</ul>;
+    return <ul className='list-group list-group-flush'>{list}</ul>;
   }
 }
-
 
 // Return footer component
 function footer(links, colour) {
   if (links.length > 0) {
     let list = [];
     for (let i = 0; i < links.length; i++) {
-      list.push(<a href={links[i].link} target="_blank" rel="noopener" key={{i}}>{links[i].title}</a>);
+      list.push(
+        <a href={links[i].link} target='_blank' rel='noopener' key={{ i }}>
+          {links[i].title}
+        </a>
+      );
     }
-    return <div className={styles.cardFooter} style={{backgroundColor: colour}}>{list}</div>;
+    return (
+      <div className={styles.cardFooter} style={{ backgroundColor: colour }}>
+        {list}
+      </div>
+    );
   }
 }
-
 
 // Export card component
 export default function Card(type, object) {
@@ -67,19 +77,22 @@ export default function Card(type, object) {
 
   switch (type) {
     case 'experience':
-      img = '/experience/'+object.img;
+      img = '/experience/' + object.img;
       title = object.job;
       body = object.description;
       date = dateString(object.date_start, object.date_end);
-      specs = [{ spec: 'Client: ', info: object.company }, { spec: 'Role: ', info: object.role },
-        { spec: '', info: object.languages }];
+      specs = [
+        { spec: 'Client: ', info: object.company },
+        { spec: 'Role: ', info: object.role },
+        { spec: '', info: object.languages }
+      ];
       colour = object.colour;
-      alt = "Company logo";
-      links = [{ link: object.link, title: 'Client'}];
+      alt = 'Company logo';
+      links = [{ link: object.link, title: 'Client' }];
       break;
 
     case 'project':
-      img = '/projects/'+object.img;
+      img = '/projects/' + object.img;
       title = object.title;
       body = object.description;
       date = dateString(object.date_start, object.date_end);
@@ -101,14 +114,14 @@ export default function Card(type, object) {
         specs.push({ spec: 'Tech: ', info: object.libraries });
       }
       colour = object.colour;
-      alt = "Project Image";
+      alt = 'Project Image';
       if (object.link) {
-        links = [{ link: object.link, title: 'View Project'}];
+        links = [{ link: object.link, title: 'View Project' }];
       }
       break;
 
     case 'education':
-      img = 'education/'+object.img;
+      img = 'education/' + object.img;
       title = object.establishment;
       body = object.level;
       date = dateString(object.date_start, object.date_end);
@@ -116,8 +129,8 @@ export default function Card(type, object) {
         specs.push({ spec: grade.subject, info: grade.grade });
       }
       colour = object.colour;
-      alt = "hi";
-      links = [{link: object.link, title: object.establishment}];
+      alt = 'hi';
+      links = [{ link: object.link, title: object.establishment }];
       break;
   }
 
@@ -127,26 +140,32 @@ export default function Card(type, object) {
   }
 
   return (
-      <>
-        <div className={styles.card} style={{border: '2px solid ' + colour}}>
-          <div className={styles.cardImgContainer}>
-            <img src={img} alt={alt} title={alt} />
-          </div>
-
-          <div className={styles.cardBody}>
-            <h5 className={styles.cardTitle}>{ title }</h5>
-            <p className={styles.cardText}>{ ReactHtmlParser (body) }</p>
-            <p className={styles.cardText}>
-              <small className="text-muted text-black">{ date }</small>
-            </p>
-          </div>
-
-          <ul className="list-group list-group-flush" style={{border: '1px solid rgba(0,0,0,.125)',
-            borderBottomLeftRadius: bottomRadius, borderBottomRightRadius: bottomRadius}}>
-            { specifications(specs, type === 'education', links.length === 0) }
-          </ul>
-          { footer(links, colour) }
+    <>
+      <div className={styles.card} style={{ border: '2px solid ' + colour }}>
+        <div className={styles.cardImgContainer}>
+          <img src={img} alt={alt} title={alt} />
         </div>
-      </>
-  )
+
+        <div className={styles.cardBody}>
+          <h5 className={styles.cardTitle}>{title}</h5>
+          <p className={styles.cardText}>{ReactHtmlParser(body)}</p>
+          <p className={styles.cardText}>
+            <small className='text-muted text-black'>{date}</small>
+          </p>
+        </div>
+
+        <ul
+          className='list-group list-group-flush'
+          style={{
+            border: '1px solid rgba(0,0,0,.125)',
+            borderBottomLeftRadius: bottomRadius,
+            borderBottomRightRadius: bottomRadius
+          }}
+        >
+          {specifications(specs, type === 'education', links.length === 0)}
+        </ul>
+        {footer(links, colour)}
+      </div>
+    </>
+  );
 }

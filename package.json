@@ -12,14 +12,29 @@
     "bootstrap": "^4.5.0",
     "isomorphic-unfetch": "^3.0.0",
     "mysql": "latest",
-    "next": "^9.4.4",
+    "next": "^9.5.5",
     "next-images": "^1.6.2",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-bootstrap": "^1.0.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-html-parser": "^2.0.2",
     "serverless-mysql": "^1.5.4",
     "sql-template-strings": "^2.2.2",
     "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "useTabs": false,
+    "bracketSpacing": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid",
+    "printWidth": 100
   }
 }
