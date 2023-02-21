@@ -1,0 +1,42 @@
+.card {
+  font-family: var(--montserrat-font);
+  margin-bottom: 30px;
+  border-radius: 31px;
+  border-width: 2px;
+}
+.cardImgContainer {
+  text-align: center;
+  font-size: 26px;
+  border-color: #3b9bd3 !important;
+  padding: 20px;
+  height: 140px;
+}
+.cardImgContainer img {
+  /* width: auto; */
+  height: 100px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.cardTitle {
+  font-family: var(--raleway-font) !important;
+  text-align: center;
+  font-weight: bold;
+}
+.cardText {
+  text-align: justify;
+  padding: 0 20px;
+}
+.cardFooter {
+  padding: 10px 20px;
+  border-radius: 0 0 26px 26px;
+}
+.cardFooter > a {
+  color: white !important;
+}
+.cardBody > .cardText small {
+  font-style: italic;
+  font-family: var(--fira_code-font);
+}
+.cardBody > .card-text > .text-black {
+  color: #000 !important;
+}

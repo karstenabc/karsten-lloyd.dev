@@ -1,0 +1,25 @@
+.qualification {
+  font-family: var(--montserrat-font);
+  margin-bottom: 30px;
+  border-radius: 31px;
+  border-width: 2px;
+}
+.qualificationTitle {
+  font-family: var(--raleway-font) !important;
+  font-weight: bold;
+  margin-top: 0.5em; ;
+}
+.qualificationFooter {
+  padding: 10px 20px;
+  border-radius: 0 0 26px 26px;
+}
+.qualificationFooter > a {
+  color: white !important;
+}
+.qualificationBody > .qualificationText small {
+  font-style: italic;
+  font-family: var(--fira_code-font);
+}
+.qualificationBody > .qualification-text > .text-black {
+  color: #000 !important;
+}
