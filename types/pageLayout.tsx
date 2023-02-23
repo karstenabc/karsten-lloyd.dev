@@ -3,13 +3,9 @@ import { ReactElement } from "react";
 import HomeLayout from "../components/layouts/homeLayout";
 import MainLayout from "../components/layouts/mainLayout";
 
-export type PageWithMainLayoutType = NextPage & { layout: typeof MainLayout };
-
-export type PageWithHomeLayoutType = NextPage & { layout: typeof HomeLayout };
-
-export type PageWithLayoutType =
-  | PageWithMainLayoutType
-  | PageWithHomeLayoutType;
+export type MainLayoutType = NextPage & { layout: typeof MainLayout };
+export type HomeLayoutType = NextPage & { layout: typeof HomeLayout };
+export type PageLayoutType = MainLayoutType | HomeLayoutType;
 
 export type LayoutProps = ({
   children,
@@ -17,4 +13,4 @@ export type LayoutProps = ({
   children: ReactElement;
 }) => ReactElement;
 
-export default PageWithLayoutType;
+export default PageLayoutType;

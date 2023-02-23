@@ -155,6 +155,7 @@ const Portfolio = ({
     </div>
   </>
 );
+
 Portfolio.layout = MainLayout;
 
 export default Portfolio;

@@ -5,7 +5,7 @@ import styles from "./navbar.module.css";
 export default function Navbar() {
   return (
     <>
-      <nav className={`navbar navbar-expand-lg ${styles.navbarContainer}`}>
+      <nav className={`navbar navbar-expand-lg navbar-dark ${styles.navbarContainer}`}>
         <div className="container">
           <Link className="navbar-brand" href="/">
             <Image
@@ -16,7 +16,7 @@ export default function Navbar() {
               height={50}
             />
           </Link>
-          Karsten Lloyd
+          <span className={styles.navbarBrandText}>Karsten Lloyd</span>
           <button
             className="navbar-toggler"
             type="button"

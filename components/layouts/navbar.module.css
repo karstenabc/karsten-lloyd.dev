@@ -1,5 +1,10 @@
 .navbarContainer {
-  background-color: #F7F7F7;
+  background-color: #218380;
   font-size: 1.2rem;
   padding: 0;
+}
+
+.navbarBrandText {
+  color: white;
+  padding-right: 2rem;
 }

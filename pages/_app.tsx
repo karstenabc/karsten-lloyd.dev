@@ -1,13 +1,17 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import type { AppProps } from "next/app";
-import { ReactElement, useEffect } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import { Fira_Code, Montserrat, Raleway, Quicksand } from "@next/font/google";
-import PageWithLayoutType from "../types/pageLayout";
+import { NextPage } from "next";
+import MainLayout from "../components/layouts/mainLayout";
 
-type AppLayoutProps = AppProps & {
-  Component: PageWithLayoutType;
-  pageProps: any;
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
 };
 
 const firaCode = Fira_Code({
@@ -24,21 +28,21 @@ const quicksand = Quicksand({
   variable: "--quicksand-font",
 });
 
-export default function App({ Component, pageProps }: AppLayoutProps) {
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   useEffect(() => {
+    // @ts-ignore
     import("bootstrap/dist/js/bootstrap");
   }, []);
 
-  const Layout =
-    Component.layout || ((children: ReactElement) => <>{children}</>);
+  // Use the layout defined at the page level, if available
+  const getLayout =
+    Component.getLayout ?? ((page) => MainLayout({ children: page }));
 
-  return (
-    <Layout>
-      <div
-        className={`${raleway.className} ${raleway.variable} ${firaCode.variable} ${montserrat.variable} ${quicksand.variable}`}
-      >
-        <Component {...pageProps} />
-      </div>
-    </Layout>
+  return getLayout(
+    <div
+      className={`${raleway.className} ${raleway.variable} ${firaCode.variable} ${montserrat.variable} ${quicksand.variable}`}
+    >
+      <Component {...pageProps} />
+    </div>
   );
 }

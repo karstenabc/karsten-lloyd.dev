@@ -3,7 +3,8 @@ import { EXPERIENCE_WITH_SPECS } from "../types/graphql/experience";
 import { GET_PORTFOLIO } from "../types/graphql/portfolio";
 
 const client = new ApolloClient({
-  uri: "http://localhost:8080/v1/graphql",
+  uri: "http://host.docker.internal:8080/v1/graphql",
+  // uri: "http://localhost:8080/v1/graphql",
   cache: new InMemoryCache(),
 });
 

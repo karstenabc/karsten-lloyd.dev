@@ -25,9 +25,6 @@ export const IconRow = (IconRowData: IconRowProps) => {
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3 mb-3">
           <Icon title="Play Store" icon={faGooglePlay} url="https://play.google.com/store/apps/developer?id=Karsten+Lloyd" />
         </div>
-        {/* <div className="col-4">
-          <Icon title="Email" icon={faEnvelope} />
-        </div> */}
       </div>
     </div>
   );

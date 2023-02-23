@@ -1,5 +1,4 @@
 import styles from "./card.module.css";
-import { Markup } from "interweave";
 import { Montserrat } from "@next/font/google";
 import { useEffect, useState } from "react";
 
