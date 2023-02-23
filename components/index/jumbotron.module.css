@@ -1,0 +1,18 @@
+.jumbotron {
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #218380;
+  padding: 1.5em 0;
+  margin-top: 3em;
+  z-index: 10;
+}
+
+.jumbotron h1 {
+  font-family: var(--raleway-font);
+}
+
+.jumbotron h2 {
+  font-family: var(--fira_code-font);
+  text-transform: uppercase;
+}

@@ -1,0 +1,17 @@
+.iconWrapper {
+  color: rgb(24, 24, 24);
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.iconContainer {
+  background-color: #2B4953;
+  border-radius: 50%;
+  padding: 12px;
+  height: 58px;
+  width: 58px;
+  margin: 0 auto;
+}

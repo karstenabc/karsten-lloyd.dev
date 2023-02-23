@@ -1,0 +1,33 @@
+.header {
+  background-color: #a0eef8;
+  padding: 1rem;
+  text-align: center;
+  color: #1b1b1be5;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.5rem;
+}
+
+.header a {
+  color: rgb(35, 129, 212);
+  text-decoration: none;
+}
+.header a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs {
+  background-color: #dbeff9;
+  padding-top: 0.8rem;
+  padding-bottom: 0.1rem;
+  color: #1b1b1be5;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+}
