@@ -1,4 +1,4 @@
-FROM node:20.12.1-alpine AS base
+FROM node:20.13-alpine AS base
 
 # Install dependencies
 FROM base AS deps
