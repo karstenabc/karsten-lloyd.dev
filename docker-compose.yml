@@ -3,7 +3,7 @@ version: '3.7'
 services:
     site:
         container_name: karsten-lloyd-site
-        image: docker.chester-lloyd.dev:5000/karsten/site:2024.04.23b
+        image: docker.chester-lloyd.dev/karsten/site:2024.08.26
         platform: linux/amd64
         build:
             context: .
