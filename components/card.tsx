@@ -94,51 +94,52 @@ export interface CardProps {
   type: "education" | "experience";
 }
 
-export const Card = (cardData: CardProps) => {
+const cardImg = (slug: string, cardType: string) => {
+  if (slug.startsWith('contractor-')) {
+    return `/logo.png`
+  }
+
+  return `/${cardType}/${slug}.png`
+}
+
+export const Card = (card: CardProps) => {
   const [cardBody, setCardBody] = useState(<span></span>);
   useEffect(
-    () =>
-      setCardBody(
-        <span dangerouslySetInnerHTML={{ __html: cardData.body }}></span>
-      ),
-    []
-  );
+    () => setCardBody(
+      <span dangerouslySetInnerHTML={{ __html: card.body }}></span>
+    ), []);
 
   return (
     <div
       className={styles.card}
-      style={{ border: `2px solid ${cardData.colour}` }}
+      style={{ border: `2px solid ${card.colour}` }}
     >
       <div className={styles.cardImgContainer}>
         <img
-          src={`/${cardData.type}/${cardData.slug}.png`}
-          alt={cardData.title}
-          title={cardData.title}
+          src={cardImg(card.slug, card.type)}
+          alt={card.title}
+          title={card.title}
         />
       </div>
 
       <div className={styles.cardBody}>
-        <h5 className={styles.cardTitle}>{cardData.title}</h5>
+        <h5 className={styles.cardTitle}>{card.title}</h5>
         <p className={styles.cardText}>{cardBody}</p>
         <p className={styles.cardText}>
           <small className="text-muted text-black">
-            {dateString(cardData.date_from, cardData.date_to)}
+            {dateString(card.date_from, card.date_to)}
           </small>
         </p>
       </div>
 
-      {cardData.specifications.specs.length > 0 && (
-        <Specifications
-          specs={cardData.specifications.specs}
-          hasLinks={cardData.specifications.hasLinks}
-          isTable={cardData.specifications.isTable}
-        />
+      {card.specifications.specs.length > 0 && (
+        <Specifications {...card.specifications} />
       )}
-      {cardData.footer.link && (
+      {card.footer.link && (
         <Footer
-          text={cardData.title}
-          link={cardData.footer.link}
-          backgroundColour={cardData.colour}
+          text={card.footer.text}
+          link={card.footer.link}
+          backgroundColour={card.colour}
         />
       )}
     </div>

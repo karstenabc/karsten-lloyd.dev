@@ -1,7 +1,7 @@
-import { gql } from "@apollo/client";
+import { gql } from "@apollo/client"
 
 export const CORE_EXPERIENCE_FIELDS = gql`
-  fragment ExperienceWithSpecs on experiences {
+  fragment ExperienceWithSpecs on Experience {
     company
     job_title
     description
@@ -10,67 +10,50 @@ export const CORE_EXPERIENCE_FIELDS = gql`
     url
     colour
     slug
-    frameworks(order_by: { framework: { name: asc } }) {
-      framework {
-        name
-      }
+    frameworks {
+      name
     }
-    languages(order_by: { language: { name: asc } }) {
-      language {
-        name
-      }
+    languages {
+      name
     }
-    services(order_by: { service: { name: asc } }) {
-      service {
-        name
-      }
+    services {
+      name
     }
-    tools(order_by: { tool: { name: asc } }) {
-      tool {
-        name
-      }
+    tools {
+      name
     }
   }
-`;
+`
 
 export const EXPERIENCE_WITH_SPECS = gql`
   ${CORE_EXPERIENCE_FIELDS}
 
   query GetExperiences {
-    experiences(order_by: { date_from: desc, date_to: desc_nulls_first }) {
+    experiences(order_by: [
+      { field: date_to, direction: desc },
+      { field: date_from, direction: desc }
+    ]) {
       ...ExperienceWithSpecs
     }
   }
-`;
+`
 
-interface ExperienceSpec {
-  name: string;
-  experience: number;
-}
-interface Framework {
-  framework: ExperienceSpec;
-}
-interface Language {
-  language: ExperienceSpec;
-}
-interface Service {
-  service: ExperienceSpec;
-}
-interface Tool {
-  tool: ExperienceSpec;
+export interface ExperienceSpec {
+  name: string
+  experience: number
 }
 
 export interface Experience {
-  company: string;
-  job_title: string;
-  description: string;
-  date_from: string;
-  date_to: string;
-  url: string;
-  colour: string;
-  slug: string;
-  frameworks: Framework[];
-  languages: Language[];
-  services: Service[];
-  tools: Tool[];
+  company: string
+  job_title: string
+  description: string
+  date_from: string
+  date_to: string
+  url: string
+  colour: string
+  slug: string
+  frameworks: ExperienceSpec[]
+  languages: ExperienceSpec[]
+  services: ExperienceSpec[]
+  tools: ExperienceSpec[]
 }

@@ -39,36 +39,36 @@ export interface QualificationProps {
   url?: string
 }
 
-export const Qualification = (QualificationData: QualificationProps) => {
+export const Qualification = (Qualification: QualificationProps) => {
   return (
     <div
       className={styles.qualification}
-      style={{ border: `2px solid ${QualificationData.colour}` }}
+      style={{ border: `2px solid ${Qualification.colour}` }}
     >
       <div className="row">
         <div className="col-4 p-3">
           <div className="mx-auto text-center">
             <img
-            className="w-100"
-              src={`/qualifications/${QualificationData.slug}.png`}
-              alt={QualificationData.course}
-              title={QualificationData.course}
+              className="w-100"
+              src={`/qualifications/${Qualification.slug}.png`}
+              alt={Qualification.course}
+              title={Qualification.course}
             />
           </div>
         </div>
         <div className="col-8">
           <div className={styles.qualificationBody}>
             <h5 className={styles.qualificationTitle}>
-              {QualificationData.organisation}
+              {Qualification.organisation}
             </h5>
             <p className={styles.qualificationText}>
-              {QualificationData.course}
+              {Qualification.course}
             </p>
             <p className={styles.qualificationText}>
               <small className="text-muted text-black">
                 {dateString(
-                  QualificationData.achieved_at,
-                  QualificationData.expires_at
+                  Qualification.achieved_at,
+                  Qualification.expires_at
                 )}
               </small>
             </p>
@@ -76,11 +76,11 @@ export const Qualification = (QualificationData: QualificationProps) => {
         </div>
       </div>
 
-      {QualificationData.url && (
+      {Qualification.url && (
         <Footer
-          text={QualificationData.course}
-          link={QualificationData.url}
-          backgroundColour={QualificationData.colour}
+          text={Qualification.course}
+          link={Qualification.url}
+          backgroundColour={Qualification.colour}
         />
       )}
     </div>

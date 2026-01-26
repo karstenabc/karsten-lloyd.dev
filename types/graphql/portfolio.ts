@@ -1,7 +1,7 @@
-import { gql } from "@apollo/client";
-import { CORE_EDUCATION_FIELDS } from "./education";
-import { CORE_EXPERIENCE_FIELDS } from "./experience";
-import { CORE_QUALIFICATION_FIELDS } from "./qualification";
+import { gql } from "@apollo/client"
+import { CORE_EDUCATION_FIELDS } from "./education"
+import { CORE_EXPERIENCE_FIELDS } from "./experience"
+import { CORE_QUALIFICATION_FIELDS } from "./qualification"
 
 export const GET_PORTFOLIO = gql`
   ${CORE_EDUCATION_FIELDS}
@@ -9,20 +9,29 @@ export const GET_PORTFOLIO = gql`
   ${CORE_QUALIFICATION_FIELDS}
 
   query GetPortfolio {
-    education(order_by: { date_from: desc, date_to: desc_nulls_first }) {
+    education(order_by: [
+      { field: date_to, direction: desc }
+      { field: date_from, direction: asc },
+    ]) {
       ...EducationWithGrades
     }
     experiences(
       limit: 3
-      order_by: { date_from: desc, date_to: desc_nulls_first }
+      order_by: [
+        { field: date_to, direction: desc }
+        { field: date_from, direction: desc },
+      ]
     ) {
       ...ExperienceWithSpecs
     }
     qualifications(
       limit: 3
-      order_by: { achieved_at: desc, expires_at: desc_nulls_first }
+      order_by: [
+        { field: achieved_at, direction: desc },
+        { field: expires_at, direction: desc }
+      ]
     ) {
       ...Qualification
     }
   }
-`;
+`

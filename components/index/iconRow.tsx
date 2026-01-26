@@ -13,17 +13,14 @@ export const IconRow = (IconRowData: IconRowProps) => {
   return (
     <div className="mb-5">
       <div className="row gx-0 px-3">
-        <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3 mb-3">
+        <div className="col-6 col-sm-4 mb-4">
           <Icon title="Github" icon={faGithub} url="https://github.com/karstenabc" />
         </div>
-        <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3 mb-3">
+        <div className="col-6 col-sm-4 mb-4">
           <Icon title="LinkedIn" icon={faLinkedin} url="https://linkedin.com/in/karsten-lloyd" />
         </div>
-        <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3 mb-3">
+        <div className="col-6 col-sm-4 mb-4">
           <Icon title="Portfolio" icon={faGrip} url="/portfolio" />
-        </div>
-        <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3 mb-3">
-          <Icon title="Play Store" icon={faGooglePlay} url="https://play.google.com/store/apps/developer?id=Karsten+Lloyd" />
         </div>
       </div>
     </div>

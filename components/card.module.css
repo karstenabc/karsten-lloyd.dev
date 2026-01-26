@@ -3,6 +3,7 @@
   margin-bottom: 30px;
   border-radius: 31px;
   border-width: 2px;
+  overflow: auto;
 }
 .cardImgContainer {
   text-align: center;
@@ -23,7 +24,6 @@
   font-weight: bold;
 }
 .cardText {
-  text-align: justify;
   padding: 0 20px;
 }
 .cardFooter {

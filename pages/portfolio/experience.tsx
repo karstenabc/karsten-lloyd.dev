@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { fetchExperience } from "../../lib/apollo";
-import { Experience } from "../../types/graphql/experience";
+import { Experience, ExperienceSpec } from "../../types/graphql/experience";
 import MainLayout from "../../components/layouts/mainLayout";
 import { CardRow } from "../../components/cardRow";
 import { Header } from "../../components/header";
@@ -9,6 +9,7 @@ export async function getStaticProps(): Promise<{
   props: PortfolioExperienceProps;
 }> {
   const data = await fetchExperience();
+
   return {
     props: {
       experiences: data.experiences,
@@ -16,7 +17,7 @@ export async function getStaticProps(): Promise<{
   };
 }
 
-type PortfolioExperienceProps = {
+export type PortfolioExperienceProps = {
   experiences: Experience[];
 };
 
@@ -52,7 +53,7 @@ const PortfolioExperience = ({ experiences }: PortfolioExperienceProps) => (
         title="Experience"
         showTitle={false}
         cards={experiences.map((experience: Experience) => ({
-          title: experience.company,
+          title: experience.job_title,
           body: experience.description,
           colour: experience.colour,
           date_from: experience.date_from,
@@ -61,37 +62,18 @@ const PortfolioExperience = ({ experiences }: PortfolioExperienceProps) => (
           key: experience.slug,
           type: "experience",
           specifications: {
-            specs: [
-              {
-                name: "Languages",
-                details: experience.languages
-                  .map(
-                    (experience_language) => experience_language.language.name
-                  )
-                  .join(", "),
-              },
-              {
-                name: "Frameworks",
-                details: experience.frameworks
-                  .map(
-                    (experience_framework) =>
-                      experience_framework.framework.name
-                  )
-                  .join(", "),
-              },
-              {
-                name: "Tools",
-                details: experience.tools
-                  .map((experience_tool) => experience_tool.tool.name)
-                  .join(", "),
-              },
-              {
-                name: "Services",
-                details: experience.services
-                  .map((experience_service) => experience_service.service.name)
-                  .join(", "),
-              },
-            ],
+            specs: (
+              [
+                ['Languages', experience.languages],
+                ['Frameworks', experience.frameworks],
+                ['Tools', experience.tools],
+                ['Services', experience.services],
+              ] as [string, ExperienceSpec[]][]
+            ).map(([name, items]) => ({
+                name,
+                details: items.map(item => item.name).join(", "),
+              })
+            ),
             isTable: false,
             hasLinks: experience.url != null,
           },

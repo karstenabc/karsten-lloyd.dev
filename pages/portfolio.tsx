@@ -19,7 +19,7 @@ export async function getStaticProps(): Promise<{ props: PortfolioProps }> {
   };
 }
 
-type PortfolioProps = {
+export type PortfolioProps = {
   education: Education[];
   experiences: Experience[];
   qualifications: Qualification[];
@@ -58,7 +58,7 @@ const Portfolio = ({
       <CardRow
         title="Experience"
         cards={experiences.map((experience: Experience) => ({
-          title: experience.company,
+          title: experience.job_title,
           body: experience.description,
           colour: experience.colour,
           date_from: experience.date_from,
@@ -72,7 +72,7 @@ const Portfolio = ({
                 name: "Languages",
                 details: experience.languages
                   .map(
-                    (experience_language) => experience_language.language.name
+                    (experience_language) => experience_language.name
                   )
                   .join(", "),
               },
@@ -81,20 +81,20 @@ const Portfolio = ({
                 details: experience.frameworks
                   .map(
                     (experience_framework) =>
-                      experience_framework.framework.name
+                      experience_framework.name
                   )
                   .join(", "),
               },
               {
                 name: "Tools",
                 details: experience.tools
-                  .map((experience_tool) => experience_tool.tool.name)
+                  .map((experience_tool) => experience_tool.name)
                   .join(", "),
               },
               {
                 name: "Services",
                 details: experience.services
-                  .map((experience_service) => experience_service.service.name)
+                  .map((experience_service) => experience_service.name)
                   .join(", "),
               },
             ],
@@ -110,21 +110,7 @@ const Portfolio = ({
         showViewAllButton={true}
       />
 
-      <CardRow
-        title="Qualifications"
-        qualificationCards={qualifications.map(
-          (qualification: Qualification) => ({
-            organisation: qualification.organisation,
-            course: qualification.course,
-            colour: qualification.colour,
-            achieved_at: qualification.achieved_at,
-            expires_at: qualification.expires_at,
-            slug: qualification.slug,
-            key: qualification.slug,
-            url: qualification.url,
-          })
-        )}
-      />
+      <CardRow title="Qualifications" qualificationCards={qualifications} />
 
       <CardRow
         title="Education"
